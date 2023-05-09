@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cuadrante de un punto</title>
+<script type="text/javascript">
+function calcularCuadrante() {
+// Obtener las coordenadas x e y del punto
+var x = parseFloat(document.getElementById("x").value);
+var y = parseFloat(document.getElementById("y").value);
+
+// Determinar el cuadrante
+var cuadrante;
+if (x > 0 && y > 0) {
+cuadrante = "I";
+} else if (x < 0 && y > 0) {
+cuadrante = "II";
+} else if (x < 0 && y < 0) {
+cuadrante = "III";
+} else if (x > 0 && y < 0) {
+cuadrante = "IV";
+} else {
+cuadrante = "sobre un eje";
+}
+
+// Mostrar el resultado
+document.getElementById("resultado").innerHTML = "El punto (" + x + ", " + y + ") se encuentra en el cuadrante " + cuadrante + ".";
+}
+</script>
+</head>
+<body>
+<h1>Cuadrante de un punto</h1>
+<p>Ingrese las coordenadas cartesianas (x, y) del punto:</p>
+<form>
+<label for="x">x:</label>
+<input type="number" id="x" name="x"><br><br>
+<label for="y">y:</label>
+<input type="number" id="y" name="y"><br><br>
+<input type="button" value="Calcular cuadrante" onclick="calcularCuadrante()">
+</form>
+<p id="resultado"></p>
+</body>
+</html>
+
+

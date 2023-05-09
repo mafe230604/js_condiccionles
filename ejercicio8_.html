@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verificar si un número es múltiplo del otro</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1>Verificar si un número es múltiplo del otro</h1>
+    <p>Ingrese dos números enteros:</p>
+    <input type="text" id="numero1" placeholder="Ingrese el primer número">
+    <input type="text" id="numero2" placeholder="Ingrese el segundo número">
+    <button onclick="verificarMultiplo()">Verificar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function verificarMultiplo() {
+            var numero1 = parseInt(document.getElementById("numero1").value);
+            var numero2 = parseInt(document.getElementById("numero2").value);
+
+            if (numero1 % numero2 === 0 || numero2 % numero1 === 0) {
+                document.getElementById("resultado").innerHTML = "Uno de los números es múltiplo del otro.";
+            } else {
+                document.getElementById("resultado").innerHTML = "Los números no son múltiplos entre sí.";
+            }
+        }
+    </script>
+</body>
+</html>

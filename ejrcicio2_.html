@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Préstamo bancario</title>
+    <script type="text/javascript">
+        function solicitarPrestamo() {
+            var ingresos = parseFloat(document.getElementById("ingresos").value);
+            var deudas = parseFloat(document.getElementById("deudas").value);
+
+            
+            if (ingresos >= 945200 && deudas < 1) {
+
+                document.getElementById("resultado").innerHTML = "Felicitaciones, su préstamo ha sido aprobado.";
+            } else {
+                document.getElementById("resultado").innerHTML = "Lo sentimos, usted no cumple con los requisitos para obtener un préstamo bancario.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Préstamo bancario</h1>
+    <p>Ingrese su información para verificar si puede hacer su tramite:</p>
+    <form>
+        <label for="ingresos">préstamo financiero $</label>
+        <input type="number" id="ingresos" name="ingresos"><br><br>
+        <label for="deudas">Deudas pendientes:</label>
+        <input type="number"id="deudas" name="deudas"><br><br>
+        <input type="button" value="Solicitar préstamo" onclick="solicitarPrestamo()">
+    </form>
+    <p id="resultado"></p>
+</body>
+</html>
